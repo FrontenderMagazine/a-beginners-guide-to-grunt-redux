@@ -2,16 +2,27 @@
 
 ![image](img/tumblr_inline_mjrobcZQpo1qz4rgp.png)
 
-Ещё в марте 2013 я написал [A Beginner’s Guide To Grunt](http://mattbailey.io/a-beginners-guide-to-grunt/ "Matt Bailey: A Beginner's Guide To Grunt") и это стала наиболее посещаемая статья моего сайта. Я написал её во время, когда я только начинал знакомство с [Grunt](http://gruntjs.com/ "Grunt") и это было в большей мере руководство для меня, чем для кого-то другого. Теперь, спустя 18 месяцев, я чувствую, что пришла пора пересмотреть подходы к Grunt, потому что за это время я многому научился.
+Ещё в марте 2013 я написал [A Beginner’s Guide To
+Grunt](http://mattbailey.io/a-beginners-guide-to-grunt/ "Matt Bailey: A
+Beginner's Guide To Grunt") и эта статья стала наиболее посещаемой на моем
+сайте. Я написал её в то время, когда только начинал знакомство с
+[Grunt](http://gruntjs.com/ "Grunt") и это было в большей мере руководство для
+меня самого, чем для кого-то другого. Теперь, спустя 18 месяцев, я чувствую,
+что пришла пора пересмотреть свои способы использования Grunt, потому что за
+это время я многому научился.
 
-**Если вам не терпится получить сам код, то можете его взять [здесь на Github](https://github.com/matt-bailey/grunt-frontend-boilerplate).**
+**Если вам не терпится получить сам код, то можете его взять [здесь на
+Github](https://github.com/matt-bailey/grunt-frontend-boilerplate).**
 
 ## Глобальная установка Node и Grunt
 
-Во-первых вам нужно убедиться, что у вас установлен [Node](http://nodejs.org/download/) и [Grunt CLI](http://gruntjs.com/getting-started) (command line interface).
+Во-первых, вам нужно убедиться, что у вас установлен
+[Node](http://nodejs.org/download/) и [Grunt CLI](http://gruntjs.com/getting-started) (command line interface).
 
-*   Сайт Node имеет разные пакеты для загрузки для различных систем. [Полную информацию можно найти здесь](http://nodejs.org/download/).
-*   После установки Node просто запустите следующую команду в вашем терминале (я использую [iTerm2](http://iterm2.com/)) для установки **grunt-cli**:
+* На сайте Node есть разные загрузочные пакеты для различных систем.
+[Полную информацию можно найти здесь](http://nodejs.org/download/).
+* После установки Node просто запустите следующую команду в вашем терминале
+(я использую [iTerm2](http://iterm2.com/)) для установки **grunt-cli**:
 
 ```
 npm install -g grunt-cli
@@ -19,9 +30,14 @@ npm install -g grunt-cli
 
 ## Установка Ruby и Sass
 
-**Обновление:** Я недавно переключился с использования  `grunt-contrib-sass` к `grunt-sass` , который использует более быстрый, но экспериментальный [libsass](http://libsass.org/) C++ компилятор. И он не требует использование Ruby или Sass гема. Однако, если у вас возникают проблемы при компиляции с помощью `grunt-sass`, то вам возможно нужно использовать `grunt-contrib-sass`,  в этом случае вам понадобится установка Ruby и Sass гемов.
+**Обновление:** Я недавно переключился с `grunt-contrib-sass` на `grunt-sass`,
+который использует более быстрый, но экспериментальный
+[libsass](http://libsass.org/) C++ компилятор. И он не требует установленных
+Ruby или Sass gem. Однако, если у вас возникают проблемы при компиляции с
+помощью `grunt-sass`, то, возможно, вам нужно использовать `grunt-contrib-sass`
+— в этом случае вам понадобится установка Ruby и Sass gem.
 
-<del>Я использую Sass в качестве моего CSS препроцессора. Для использования Sass Grunt задания вам нужно установить Ruby ([полная инструкция по инсталяции здесь](https://www.ruby-lang.org/en/installation/)) и, после того, как вы сделаете это, [Sass](http://sass-lang.com/download.html) gem:</del>
+Я использую Sass в качестве моего CSS-препроцессора. Для использования Sass Grunt задания, вам нужно установить Ruby ([полная инструкция по установке здесь](https://www.ruby-lang.org/en/installation/)) и, после того, как вы сделаете это, [Sass](http://sass-lang.com/download.html) gem:
 
 ```
 gem install sass
@@ -50,11 +66,11 @@ src/styles/
 ```
 module.exports = function(grunt) {
 
-    require('time-grunt')(grunt);
+  require('time-grunt')(grunt);
 
-    require('load-grunt-config')(grunt, {
-        jitGrunt: true
-    });
+  require('load-grunt-config')(grunt, {
+    jitGrunt: true
+  });
 };
 ```
 
@@ -68,9 +84,9 @@ module.exports = function(grunt) {
 
 ```
 {
-  "name": "my-project",
-  "version": "0.0.1",
-  "description": "My project"
+ "name": "my-project",
+ "version": "0.0.1",
+ "description": "My project"
 }
 ```
 
@@ -96,40 +112,40 @@ npm install grunt-contrib-watch --save-dev
 
 ```
 {
-  "name": "my-project",
-  "version": "0.0.1",
-  "description": "My Project",
-  "devDependencies": {
-    "grunt": "^0.4.5",
-    "grunt-concurrent": "^1.0.0",
-    "grunt-contrib-clean": "^0.6.0",
-    "grunt-contrib-imagemin": "^0.8.1",
-    "grunt-contrib-jshint": "^0.10.0",
-    "grunt-contrib-uglify": "^0.6.0",
-    "grunt-contrib-watch": "^0.6.1",
-    "grunt-sass": "^0.16.1",
-    "load-grunt-config": "^0.13.1"
-  },
-  "dependencies": {
-    "jshint-stylish": "^1.0.0",
-    "time-grunt": "^1.0.0"
-  }
+ "name": "my-project",
+ "version": "0.0.1",
+ "description": "My Project",
+ "devDependencies": {
+  "grunt": "^0.4.5",
+  "grunt-concurrent": "^1.0.0",
+  "grunt-contrib-clean": "^0.6.0",
+  "grunt-contrib-imagemin": "^0.8.1",
+  "grunt-contrib-jshint": "^0.10.0",
+  "grunt-contrib-uglify": "^0.6.0",
+  "grunt-contrib-watch": "^0.6.1",
+  "grunt-sass": "^0.16.1",
+  "load-grunt-config": "^0.13.1"
+ },
+ "dependencies": {
+  "jshint-stylish": "^1.0.0",
+  "time-grunt": "^1.0.0"
+ }
 }
 ```
 
 Вот заключение того, что мы только что установили:
 
-1.  `grunt`: Сам исполнитель задач.
-2.  `time-grunt`: Это не обязательно, но весьма полезное дополнение - оно сообщает вам сколько времени занимает каждая задача и общее время билда.
-3.  `load-grunt-config`: Позволяет вам держать ваш основной Gruntfile в коротком и упорядоченом виде. Подробнее об этом чуть позже.
-4.  `grunt-concurrent`: Запускает задачи одновременно - Grunt из-коробки будет запускать каждую задачу одну за другой, что может занянуться на время, в зависимости на количестве и типе заданий, необходимых для выполнения. Однако, часто есть задания, которые не зависят от других заданий, которые могут быть запущены в одно и то же время.
-5.  `grunt-contrib-clean`: Очень просто, эта задача удаляет "вещи" - используйте с осторожностью!
-6.  `grunt-contrib-imagemin`: Незаменимая вещь для всех оптимизационных нужд работы с изображениями.
-7.  `grunt-sass`: Компиляция ваших SASS/SCSS файлов в CSS. **Обратите внимание:** Эта Sass задача использует более быстрый, но экспериментальный [libsass](http://libsass.org/) компилятор. Если у вас возникнут проблемы, то лучше используйте более стабильный, но медленный [grunt-contrib-sass](https://github.com/gruntjs/grunt-contrib-sass) компилятор задач.
-8.  `grunt-contrib-uglify`: Делает ваш Javascript красивым и ужасным.
-9.  `grunt-contrig-jshint`: Валидация ваших Javascript файлов.
-10.  `jshint-stylish`: Полностью опционально, но это преобразовывает вывод `grunt-contrig-jshint` в отличный вид.
-11.  `grunt-contrib-watch`: Запускает задачи при каких-либо изменениях наблюдаемых фалов.
+1. `grunt`: Сам исполнитель задач.
+2. `time-grunt`: Это не обязательно, но весьма полезное дополнение - оно сообщает вам сколько времени занимает каждая задача и общее время билда.
+3. `load-grunt-config`: Позволяет вам держать ваш основной Gruntfile в коротком и упорядоченом виде. Подробнее об этом чуть позже.
+4. `grunt-concurrent`: Запускает задачи одновременно - Grunt из-коробки будет запускать каждую задачу одну за другой, что может занянуться на время, в зависимости на количестве и типе заданий, необходимых для выполнения. Однако, часто есть задания, которые не зависят от других заданий, которые могут быть запущены в одно и то же время.
+5. `grunt-contrib-clean`: Очень просто, эта задача удаляет "вещи" - используйте с осторожностью!
+6. `grunt-contrib-imagemin`: Незаменимая вещь для всех оптимизационных нужд работы с изображениями.
+7. `grunt-sass`: Компиляция ваших SASS/SCSS файлов в CSS. **Обратите внимание:** Эта Sass задача использует более быстрый, но экспериментальный [libsass](http://libsass.org/) компилятор. Если у вас возникнут проблемы, то лучше используйте более стабильный, но медленный [grunt-contrib-sass](https://github.com/gruntjs/grunt-contrib-sass) компилятор задач.
+8. `grunt-contrib-uglify`: Делает ваш Javascript красивым и ужасным.
+9. `grunt-contrig-jshint`: Валидация ваших Javascript файлов.
+10. `jshint-stylish`: Полностью опционально, но это преобразовывает вывод `grunt-contrig-jshint` в отличный вид.
+11. `grunt-contrib-watch`: Запускает задачи при каких-либо изменениях наблюдаемых фалов.
 
 ## Конфигурация задач
 
@@ -156,145 +172,145 @@ grunt/watch.js
 
 ```
 default:
-  description: 'Default (production) build'
-  tasks:
-    - prod
+ description: 'Default (production) build'
+ tasks:
+  - prod
 dev:
-  description: 'Development build'
-  tasks:
-    - 'concurrent:devFirst'
-    - 'concurrent:devSecond'
+ description: 'Development build'
+ tasks:
+  - 'concurrent:devFirst'
+  - 'concurrent:devSecond'
 img:
-  description: 'Image tasks'
-  tasks:
-    - 'concurrent:imgFirst'
+ description: 'Image tasks'
+ tasks:
+  - 'concurrent:imgFirst'
 devimg:
-  description: 'Development build and image tasks'
-  tasks:
-    - dev
-    - img
+ description: 'Development build and image tasks'
+ tasks:
+  - dev
+  - img
 prod:
-  description: 'Production build'
-  tasks:
-    - 'concurrent:prodFirst'
-    - 'concurrent:prodSecond'
-    - img
+ description: 'Production build'
+ tasks:
+  - 'concurrent:prodFirst'
+  - 'concurrent:prodSecond'
+  - img
 ```
 Здесь мы определяем различные псевдонимы для наших задач:
 
-*   `default` - Запускает `prod`  задачи, когда вы запускаете `grunt` из командной строки.
-*   `dev` - Запускает задачи разработки (но не задачи по изображениям)
-*   `img` - Запускает задачи по изображениям
-*   `devimg` - Запускает задачи по разработке и изображениям
-*   `prod` - Запускает задачи производства и по изображениям
+*  `default` - Запускает `prod` задачи, когда вы запускаете `grunt` из командной строки.
+*  `dev` - Запускает задачи разработки (но не задачи по изображениям)
+*  `img` - Запускает задачи по изображениям
+*  `devimg` - Запускает задачи по разработке и изображениям
+*  `prod` - Запускает задачи производства и по изображениям
 
-**[Перейдите сюда](https://github.com/firstandthird/load-grunt-config#aliases) за более подробной информацией  по конфигурированию псевдонимов задач для `load-grunt-config`.**
+**[Перейдите сюда](https://github.com/firstandthird/load-grunt-config#aliases) за более подробной информацией по конфигурированию псевдонимов задач для `load-grunt-config`.**
 
 ### concurrent.js
 
 ```
 module.exports = {
 
-    // Task options
-    options: {
-        limit: 3
-    },
+  // Task options
+  options: {
+    limit: 3
+  },
 
-    // Dev tasks
-    devFirst: [
-        'clean',
-        'jshint'
-    ],
-    devSecond: [
-        'sass:dev',
-        'uglify'
-    ],
+  // Dev tasks
+  devFirst: [
+    'clean',
+    'jshint'
+  ],
+  devSecond: [
+    'sass:dev',
+    'uglify'
+  ],
 
-    // Production tasks
-    prodFirst: [
-        'clean',
-        'jshint'
-    ],
-    prodSecond: [
-        'sass:prod',
-        'uglify'
-    ],
+  // Production tasks
+  prodFirst: [
+    'clean',
+    'jshint'
+  ],
+  prodSecond: [
+    'sass:prod',
+    'uglify'
+  ],
 
-    // Image tasks
-    imgFirst: [
-        'imagemin'
-    ]
+  // Image tasks
+  imgFirst: [
+    'imagemin'
+  ]
 };
 ```
-Взяв задачи по разработке как пример, вы можете видеть, что они установлены для запуска вначале  `clean` и далее `sass:dev` и `uglify` одновременно для регенерации css и javascript.
+Взяв задачи по разработке как пример, вы можете видеть, что они установлены для запуска вначале `clean` и далее `sass:dev` и `uglify` одновременно для регенерации css и javascript.
 
-**[Перейдите сюда](https://github.com/sindresorhus/grunt-concurrent) за более подробной информацией  по конфигурированию `grunt-concurrent`.**
+**[Перейдите сюда](https://github.com/sindresorhus/grunt-concurrent) за более подробной информацией по конфигурированию `grunt-concurrent`.**
 
 ### clean.js
 
 ```
 module.exports = {
-    all: [
-        "dist/"
-    ]
+  all: [
+    "dist/"
+  ]
 };
 ```
 
 Конфигурирование `grunt-contrib-clean` - это очень просто. Здесь я просто удаляю содержимое директори `dist/`. Используйте эту задачу с осторожностью - она будет удалять без разбора всё, что вы ей скажете без всяких оповещений, поэтому убедитесь, что сконфигурировали её правильно.
 
-**[Перейдите сюда](https://github.com/gruntjs/grunt-contrib-clean) за более подробной информацией  по конфигурированию `grunt-contrib-clean`.**
+**[Перейдите сюда](https://github.com/gruntjs/grunt-contrib-clean) за более подробной информацией по конфигурированию `grunt-contrib-clean`.**
 
 ### imagemin.js
 
 ```
 module.exports = {
-    all: {
-        files: [{
-            expand: true,
-            cwd: 'src/',
-            src: ['images/*.{png,jpg,gif}'],
-            dest: 'dist/'
-        }]
-    }
+  all: {
+    files: [{
+      expand: true,
+      cwd: 'src/',
+      src: ['images/*.{png,jpg,gif}'],
+      dest: 'dist/'
+    }]
+  }
 };
 ```
 
 Конфигурация выше, просто оптимизирует все изображения в `src/images/` и сохраняет их в `dist/images/`.
 
-**[Перейдите сюда](https://github.com/gruntjs/grunt-contrib-imagemin) за более подробной информацией  по конфигурированию `grunt-contrib-imagemin`.**
+**[Перейдите сюда](https://github.com/gruntjs/grunt-contrib-imagemin) за более подробной информацией по конфигурированию `grunt-contrib-imagemin`.**
 
 ### sass.js
 
 ```
 module.exports = {
-    // Development settings
-    dev: {
-        options: {
-            outputStyle: 'nested',
-            sourceMap: true
-        },
-        files: [{
-            expand: true,
-            cwd: 'src/styles',
-            src: ['*.scss'],
-            dest: 'dist/styles',
-            ext: '.css'
-        }]
+  // Development settings
+  dev: {
+    options: {
+      outputStyle: 'nested',
+      sourceMap: true
     },
-    // Production settings
-    prod: {
-        options: {
-            outputStyle: 'compressed',
-            sourceMap: false
-        },
-        files: [{
-            expand: true,
-            cwd: 'src/styles',
-            src: ['*.scss'],
-            dest: 'dist/styles',
-            ext: '.css'
-        }]
-    }
+    files: [{
+      expand: true,
+      cwd: 'src/styles',
+      src: ['*.scss'],
+      dest: 'dist/styles',
+      ext: '.css'
+    }]
+  },
+  // Production settings
+  prod: {
+    options: {
+      outputStyle: 'compressed',
+      sourceMap: false
+    },
+    files: [{
+      expand: true,
+      cwd: 'src/styles',
+      src: ['*.scss'],
+      dest: 'dist/styles',
+      ext: '.css'
+    }]
+  }
 };
 ```
 Я разделил Sass задачу на рабочие процессы разработки и производства. Конфигурация очень схожа, но для целей разработки я установил стиль вывода в `nested` и активировал карты источников.
@@ -306,13 +322,13 @@ module.exports = {
 ```
 module.exports = {
 
-    options: {
-        reporter: require('jshint-stylish')
-    },
+  options: {
+    reporter: require('jshint-stylish')
+  },
 
-    main: [
-        'src/scripts/*.js'
-    ]
+  main: [
+    'src/scripts/*.js'
+  ]
 };
 ```
 
@@ -324,15 +340,15 @@ module.exports = {
 
 ```
 module.exports = {
-    all: {
-        files: [{
-            expand: true,
-            cwd: 'src/scripts',
-            src: '**/*.js',
-            dest: 'dist/scripts',
-            ext: '.min.js'
-        }]
-    }
+  all: {
+    files: [{
+      expand: true,
+      cwd: 'src/scripts',
+      src: '**/*.js',
+      dest: 'dist/scripts',
+      ext: '.min.js'
+    }]
+  }
 };
 ```
 
@@ -345,33 +361,33 @@ module.exports = {
 ```
 module.exports = {
 
-    options: {
-        spawn: false,
-        livereload: true
-    },
+  options: {
+    spawn: false,
+    livereload: true
+  },
 
-    scripts: {
-        files: [
-            'src/scripts/*.js'
-        ],
-        tasks: [
-            'jshint',
-            'uglify'
-        ]
-    },
+  scripts: {
+    files: [
+      'src/scripts/*.js'
+    ],
+    tasks: [
+      'jshint',
+      'uglify'
+    ]
+  },
 
-    styles: {
-        files: [
-            'src/styles/*.scss'
-        ],
-        tasks: [
-            'sass:dev'
-        ]
-    },
+  styles: {
+    files: [
+      'src/styles/*.scss'
+    ],
+    tasks: [
+      'sass:dev'
+    ]
+  },
 };
 ```
 
-Watch запускает специфичные задач при изменении в наблюдаемых файлах - их добавлении, редактировании, удалении. 
+Watch запускает специфичные задач при изменении в наблюдаемых файлах - их добавлении, редактировании, удалении.
 
 **Обратите внимание: Наиболее простым способом заставить работать Livereload - это установить [расширение браузера](http://feedback.livereload.com/knowledgebase/articles/86242).**
 
@@ -393,7 +409,7 @@ Watch запускает специфичные задач при изменен
 
 ## Выводы
 
-Ну вот, пожалуй, и всё по этому вопросу. Если вы экспериментируете с вышеприведенным, то скоро вы набьёте руку, начнёте добавлять новые задачи и подстраивать под себя рабочий процесс. 
+Ну вот, пожалуй, и всё по этому вопросу. Если вы экспериментируете с вышеприведенным, то скоро вы набьёте руку, начнёте добавлять новые задачи и подстраивать под себя рабочий процесс.
 
 **Снова повторюсь, код в этой статье можно найти на [Github](https://github.com/matt-bailey/grunt-frontend-boilerplate).**
 

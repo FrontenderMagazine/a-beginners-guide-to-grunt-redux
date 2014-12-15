@@ -66,7 +66,7 @@ src/styles/
 означает, что я гораздо лучше понимаю что происходит. На самом деле  всё не так
 сложно, если вы проделаете это несколько раз.
 
-В корне вашего проекта создайте файл с названием`Gruntfile.js`.
+В корне вашего проекта создайте файл `Gruntfile.js`.
 
 Добавьте в этот файл следующий код:
 
@@ -84,9 +84,9 @@ module.exports = function(grunt) {
 Верите или нет — это всё, что с нужно сделать с Gruntfile!
 
 `time-grunt` сообщает вам как много времени занимает каждая задача и общее
-время билда, а `jitGrunt: true` указывает `load-grunt-config` использовать
+время сборки, а `jitGrunt: true` указывает `load-grunt-config` использовать
 быстрый [jit-grunt](https://github.com/shootaroo/jit-grunt) (Just In Time)
-загрузчик задач (это опционально, но  нам же важна скорость?).
+загрузчик задач (это опционально, но нам же важна скорость?).
 
 ## Создание файла пакета
 
@@ -309,7 +309,7 @@ module.exports = {
 
 Эта задача просто оптимизирует все изображения в `src/images/` и сохраняет их в `dist/images/`.
 
-**[Перейдите сюда](https://github.com/gruntjs/grunt-contrib-imagemin) за более подробной информацией по управлению `grunt-contrib-imagemin`.**
+**[Здесь](https://github.com/gruntjs/grunt-contrib-imagemin) более подробная информация по управлению `grunt-contrib-imagemin`.**
 
 ### sass.js
 
@@ -349,7 +349,7 @@ module.exports = {
 сайт. Конфигурации очень схожи, но для разработки я установил стиль вывода
 `nested` и включил карты кода.
 
-**[Перейдите сюда](https://github.com/sindresorhus/grunt-sass) за более подробной информацией по конфигурации `grunt-sass`.**
+**[Здесь](https://github.com/sindresorhus/grunt-sass) более подробная информация по конфигурации `grunt-sass`.**
 
 ### jshint.js
 
@@ -368,8 +368,7 @@ module.exports = {
 
 Задача jshint проверяет ваш Javascript и гарантирует, что всё в порядке.
 
-**[Перейдите сюда](https://github.com/gruntjs/grunt-contrib-jshint) за
-более подробной информацией по конфигурированию `grunt-contrib-jshint`.**
+**[Здесь](https://github.com/gruntjs/grunt-contrib-jshint) более подробная информациия по конфигурированию `grunt-contrib-jshint`.**
 
 ### uglify.js
 
@@ -389,8 +388,8 @@ module.exports = {
 
 Задача uglify берёт Javascript файлы и минифицирует их — всё просто!
 
-**[Перейдите сюда](https://github.com/gruntjs/grunt-contrib-uglify) за
-более подробной информацией по конфигурированию `grunt-contrib-uglify`.**
+**[Здесь](https://github.com/gruntjs/grunt-contrib-uglify)
+более подробная информация по конфигурированию `grunt-contrib-uglify`.**
 
 ### watch.js
 

@@ -457,6 +457,6 @@ Watch запускает специфичные задач при изменен
 выше, то скоро набьёте руку, начнёте добавлять новые задачи и подстраивать
 рабочий процесс под свои нужды.
 
-**Снова повторюсь, код в этой статье можно найти на [Github](https://github.com/matt-bailey/grunt-frontend-boilerplate).**
+**Снова повторюсь, код из этой статьи можно найти на [Github](https://github.com/matt-bailey/grunt-frontend-boilerplate).**
 
 Оставляйте любые вопросы в комментариях ниже или задавайте их на [github](https://github.com/matt-bailey/grunt-frontend-boilerplate/issues).

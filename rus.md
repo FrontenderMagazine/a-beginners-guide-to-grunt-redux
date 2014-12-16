@@ -1,4 +1,4 @@
-# Руководство для начинающих в Grunt: Redux
+# Руководство для начинающих в Grunt: возвращение
 
 ![image](img/tumblr_inline_mjrobcZQpo1qz4rgp.png)
 

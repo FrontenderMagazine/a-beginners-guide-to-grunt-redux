@@ -2,9 +2,7 @@
 
 ![Логотип Grunt][Логотип Grunt]
 
-Ещё в марте 2013 я написал [A Beginner’s Guide To
-Grunt](http://mattbailey.io/a-beginners-guide-to-grunt/ "Matt Bailey: A
-Beginner's Guide To Grunt"), и эта статья стала наиболее посещаемой на моем
+Ещё в марте 2013 я написал [A Beginner’s Guide To Grunt][2], и эта статья стала наиболее посещаемой на моем
 сайте. Я написал её когда только начинал знакомство с
 [Grunt][3], так что это было в большей степени
 руководство для
@@ -12,8 +10,7 @@ Beginner's Guide To Grunt"), и эта статья стала наиболее 
 необходимость пересмотреть свои подходы к использованию Grunt, потому что за
 это время я многому научился.
 
-**Если вам не терпится получить сам код, вы можете взять его [здесь на
-Github](https://github.com/matt-bailey/grunt-frontend-boilerplate).**
+**Если вам не терпится получить сам код, вы можете взять его [здесь на Github][4].**
 
 ## Глобальная установка Node и Grunt
 
@@ -25,9 +22,9 @@ Github](https://github.com/matt-bailey/grunt-frontend-boilerplate).**
 * После установки Node просто запустите следующую команду в вашем терминале
 (я использую [iTerm2][7]) для установки **grunt-cli**:
 
-```
-npm install -g grunt-cli
-```
+
+    npm install -g grunt-cli
+
 
 ## Установка Ruby и Sass
 
@@ -43,21 +40,21 @@ npm install -g grunt-cli
 здесь][9]), а после этого gem
 [Sass][10]:
 
-```
-gem install sass
-```
+
+    gem install sass
+
 
 ## Создание структуры проекта
 
 Для начала в наш проект нужно добавить несколько директорий, их структура отражена ниже:
 
-```
-grunt/
-src/
-src/images/
-src/scripts/
-src/styles/
-```
+
+    grunt/
+    src/
+    src/images/
+    src/scripts/
+    src/styles/
+
 
 ## Создание Gruntfile
 
@@ -70,16 +67,16 @@ src/styles/
 
 Добавьте в этот файл следующий код:
 
-```
-module.exports = function(grunt) {
 
-  require('time-grunt')(grunt);
+    module.exports = function(grunt) {
 
-  require('load-grunt-config')(grunt, {
-    jitGrunt: true
-  });
-};
-```
+      require('time-grunt')(grunt);
+
+      require('load-grunt-config')(grunt, {
+        jitGrunt: true
+      });
+    };
+
 
 Верите или нет — это всё, что с нужно сделать с Gruntfile!
 
@@ -95,57 +92,57 @@ module.exports = function(grunt) {
 Создайте файл и скопируйте в него этот код (очевидно, что нужно сменить ссылку с «my project» на
 настоящее имя вашего проекта):
 
-```
-{
- "name": "my-project",
- "version": "0.0.1",
- "description": "My project"
-}
-```
+
+    {
+     "name": "my-project",
+     "version": "0.0.1",
+     "description": "My project"
+    }
+
 
 ## Добавление зависимостей
 
 Теперь у нас есть всё необходимое для того, чтобы добавить несколько модулей.
 Запустите по очереди каждую строчку из кода, приведенного ниже:
 
-```
-npm install grunt --save-dev
-npm install time-grunt --save
-npm install load-grunt-config --save-dev
-npm install grunt-concurrent --save-dev
-npm install grunt-contrib-clean --save-dev
-npm install grunt-contrib-imagemin --save-dev
-npm install grunt-sass --save-dev
-npm install grunt-contrib-uglify --save-dev
-npm install grunt-contrib-jshint --save-dev
-npm install jshint-stylish --save
-npm install grunt-contrib-watch --save-dev
-```
+
+    npm install grunt --save-dev
+    npm install time-grunt --save
+    npm install load-grunt-config --save-dev
+    npm install grunt-concurrent --save-dev
+    npm install grunt-contrib-clean --save-dev
+    npm install grunt-contrib-imagemin --save-dev
+    npm install grunt-sass --save-dev
+    npm install grunt-contrib-uglify --save-dev
+    npm install grunt-contrib-jshint --save-dev
+    npm install jshint-stylish --save
+    npm install grunt-contrib-watch --save-dev
+
 
 Если вы теперь заглянете в `package.json`, то увидите такое:
 
-```
-{
- "name": "my-project",
- "version": "0.0.1",
- "description": "My Project",
- "devDependencies": {
-  "grunt": "^0.4.5",
-  "grunt-concurrent": "^1.0.0",
-  "grunt-contrib-clean": "^0.6.0",
-  "grunt-contrib-imagemin": "^0.8.1",
-  "grunt-contrib-jshint": "^0.10.0",
-  "grunt-contrib-uglify": "^0.6.0",
-  "grunt-contrib-watch": "^0.6.1",
-  "grunt-sass": "^0.16.1",
-  "load-grunt-config": "^0.13.1"
- },
- "dependencies": {
-  "jshint-stylish": "^1.0.0",
-  "time-grunt": "^1.0.0"
- }
-}
-```
+
+    {
+     "name": "my-project",
+     "version": "0.0.1",
+     "description": "My Project",
+     "devDependencies": {
+      "grunt": "^0.4.5",
+      "grunt-concurrent": "^1.0.0",
+      "grunt-contrib-clean": "^0.6.0",
+      "grunt-contrib-imagemin": "^0.8.1",
+      "grunt-contrib-jshint": "^0.10.0",
+      "grunt-contrib-uglify": "^0.6.0",
+      "grunt-contrib-watch": "^0.6.1",
+      "grunt-sass": "^0.16.1",
+      "load-grunt-config": "^0.13.1"
+     },
+     "dependencies": {
+      "jshint-stylish": "^1.0.0",
+      "time-grunt": "^1.0.0"
+     }
+    }
+
 
 Вот более подробное описание того, что мы только что установили:
 
@@ -182,16 +179,16 @@ Gruntfile.
 
 В директории `grunt` создайте следующие файлы:
 
-```
-grunt/aliases.yaml
-grunt/concurrent.js
-grunt/clean.js
-grunt/imagemin.js
-grunt/jshint.js
-grunt/sass.js
-grunt/uglify.js
-grunt/watch.js
-```
+
+    grunt/aliases.yaml
+    grunt/concurrent.js
+    grunt/clean.js
+    grunt/imagemin.js
+    grunt/jshint.js
+    grunt/sass.js
+    grunt/uglify.js
+    grunt/watch.js
+
 
 **Обратите внимание: имена этих файлов должны соответствовать названиям задач.**
 
@@ -199,32 +196,32 @@ grunt/watch.js
 
 ### aliases.yaml
 
-```
-default:
- description: 'Сборка по умолчанию (продакшн)'
- tasks:
-  - prod
-dev:
- description: 'Сборка для разработки'
- tasks:
-  - 'concurrent:devFirst'
-  - 'concurrent:devSecond'
-img:
- description: 'Работа с изображениями'
- tasks:
-  - 'concurrent:imgFirst'
-devimg:
- description: 'Сборка для разработки и работа с изображениями'
- tasks:
-  - dev
-  - img
-prod:
- description: 'Сборка продакшна'
- tasks:
-  - 'concurrent:prodFirst'
-  - 'concurrent:prodSecond'
-  - img
-```
+
+    default:
+     description: 'Сборка по умолчанию (продакшн)'
+     tasks:
+      - prod
+    dev:
+     description: 'Сборка для разработки'
+     tasks:
+      - 'concurrent:devFirst'
+      - 'concurrent:devSecond'
+    img:
+     description: 'Работа с изображениями'
+     tasks:
+      - 'concurrent:imgFirst'
+    devimg:
+     description: 'Сборка для разработки и работа с изображениями'
+     tasks:
+      - dev
+      - img
+    prod:
+     description: 'Сборка продакшна'
+     tasks:
+      - 'concurrent:prodFirst'
+      - 'concurrent:prodSecond'
+      - img
+
 Здесь мы задаём псевдонимы для наших задач:
 
 *  `default` — запускает `prod` задачи, когда вы запускаете `grunt` из
@@ -238,40 +235,41 @@ prod:
 
 ### concurrent.js
 
-```
-module.exports = {
 
-  // Настройки задач
-  options: {
-    limit: 3
-  },
+    module.exports = {
 
-  // Задачи для разработки
-  devFirst: [
-    'clean',
-    'jshint'
-  ],
-  devSecond: [
-    'sass:dev',
-    'uglify'
-  ],
+      // Настройки задач
+      options: {
+        limit: 3
+      },
 
-  // Задачи для продакшна
-  prodFirst: [
-    'clean',
-    'jshint'
-  ],
-  prodSecond: [
-    'sass:prod',
-    'uglify'
-  ],
+      // Задачи для разработки
+      devFirst: [
+        'clean',
+        'jshint'
+      ],
+      devSecond: [
+        'sass:dev',
+        'uglify'
+      ],
 
-  // Image tasks
-  imgFirst: [
-    'imagemin'
-  ]
-};
-```
+      // Задачи для продакшна
+      prodFirst: [
+        'clean',
+        'jshint'
+      ],
+      prodSecond: [
+        'sass:prod',
+        'uglify'
+      ],
+
+      // Image tasks
+      imgFirst: [
+        'imagemin'
+      ]
+    };
+
+
 Если, например, взять `dev`-задачи, вы увидите, что сначала должен запуститься  
 `clean`, а затем `sass:dev` и `uglify` одновременно — для перегенерации CSS и
 Javascript.
@@ -280,13 +278,13 @@ Javascript.
 
 ### clean.js
 
-```
-module.exports = {
-  all: [
-    "dist/"
-  ]
-};
-```
+
+    module.exports = {
+      all: [
+        "dist/"
+      ]
+    };
+
 
 Управлять `grunt-contrib-clean` совсем несложно: здесь я просто говорю, что нужно удалить содержимое директории `dist/`. Используйте эту задачу с осторожностью - она будет удалять без разбора всё, что вы ей скажете — без всяких оповещений, поэтому убедитесь, что всё настроили правильно.
 
@@ -294,18 +292,18 @@ module.exports = {
 
 ### imagemin.js
 
-```
-module.exports = {
-  all: {
-    files: [{
-      expand: true,
-      cwd: 'src/',
-      src: ['images/*.{png,jpg,gif}'],
-      dest: 'dist/'
-    }]
-  }
-};
-```
+
+    module.exports = {
+      all: {
+        files: [{
+          expand: true,
+          cwd: 'src/',
+          src: ['images/*.{png,jpg,gif}'],
+          dest: 'dist/'
+        }]
+      }
+    };
+
 
 Эта задача просто оптимизирует все изображения из `src/images/` и сохраняет их в `dist/images/`.
 
@@ -313,38 +311,39 @@ module.exports = {
 
 ### sass.js
 
-```
-module.exports = {
-  // Настройки для разработки
-  dev: {
-    options: {
-      outputStyle: 'nested',
-      sourceMap: true
-    },
-    files: [{
-      expand: true,
-      cwd: 'src/styles',
-      src: ['*.scss'],
-      dest: 'dist/styles',
-      ext: '.css'
-    }]
-  },
-  // Настройки для продакшна
-  prod: {
-    options: {
-      outputStyle: 'compressed',
-      sourceMap: false
-    },
-    files: [{
-      expand: true,
-      cwd: 'src/styles',
-      src: ['*.scss'],
-      dest: 'dist/styles',
-      ext: '.css'
-    }]
-  }
-};
-```
+
+    module.exports = {
+      // Настройки для разработки
+      dev: {
+        options: {
+          outputStyle: 'nested',
+          sourceMap: true
+        },
+        files: [{
+          expand: true,
+          cwd: 'src/styles',
+          src: ['*.scss'],
+          dest: 'dist/styles',
+          ext: '.css'
+        }]
+      },
+      // Настройки для продакшна
+      prod: {
+        options: {
+          outputStyle: 'compressed',
+          sourceMap: false
+        },
+        files: [{
+          expand: true,
+          cwd: 'src/styles',
+          src: ['*.scss'],
+          dest: 'dist/styles',
+          ext: '.css'
+        }]
+      }
+    };
+
+
 Я разделил Sass-задачу на процессы для разработки (`dev`) и для выкладки на действующий
 сайт (`prod`). Конфигурации очень схожи, но для разработки я установил стиль вывода
 `nested` и включил карты кода.
@@ -353,18 +352,18 @@ module.exports = {
 
 ### jshint.js
 
-```
-module.exports = {
 
-  options: {
-    reporter: require('jshint-stylish')
-  },
+    module.exports = {
 
-  main: [
-    'src/scripts/*.js'
-  ]
-};
-```
+      options: {
+        reporter: require('jshint-stylish')
+      },
+
+      main: [
+        'src/scripts/*.js'
+      ]
+    };
+
 
 Задача `jshint` проверяет Javascript и сообщает, всё ли в порядке.
 
@@ -372,19 +371,19 @@ module.exports = {
 
 ### uglify.js
 
-```
-module.exports = {
-  all: {
-    files: [{
-      expand: true,
-      cwd: 'src/scripts',
-      src: '**/*.js',
-      dest: 'dist/scripts',
-      ext: '.min.js'
-    }]
-  }
-};
-```
+
+    module.exports = {
+      all: {
+        files: [{
+          expand: true,
+          cwd: 'src/scripts',
+          src: '**/*.js',
+          dest: 'dist/scripts',
+          ext: '.min.js'
+        }]
+      }
+    };
+
 
 Задача `uglify` берёт Javascript-файлы и минифицирует их — всё просто!
 
@@ -393,34 +392,34 @@ module.exports = {
 
 ### watch.js
 
-```
-module.exports = {
 
-  options: {
-    spawn: false,
-    livereload: true
-  },
+    module.exports = {
 
-  scripts: {
-    files: [
-      'src/scripts/*.js'
-    ],
-    tasks: [
-      'jshint',
-      'uglify'
-    ]
-  },
+      options: {
+        spawn: false,
+        livereload: true
+      },
 
-  styles: {
-    files: [
-      'src/styles/*.scss'
-    ],
-    tasks: [
-      'sass:dev'
-    ]
-  },
-};
-```
+      scripts: {
+        files: [
+          'src/scripts/*.js'
+        ],
+        tasks: [
+          'jshint',
+          'uglify'
+        ]
+      },
+
+      styles: {
+        files: [
+          'src/styles/*.scss'
+        ],
+        tasks: [
+          'sass:dev'
+        ]
+      },
+    };
+
 
 `watch` запускает заданные задач при изменении в наблюдаемых файлах - при добавлении, редактировании 
 или удалении.

@@ -1,12 +1,12 @@
 # Руководство для начинающих в Grunt: возвращение
 
-![Логотип Grunt](img/tumblr_inline_mjrobcZQpo1qz4rgp.png)
+![Логотип Grunt][Логотип Grunt]
 
 Ещё в марте 2013 я написал [A Beginner’s Guide To
 Grunt](http://mattbailey.io/a-beginners-guide-to-grunt/ "Matt Bailey: A
 Beginner's Guide To Grunt"), и эта статья стала наиболее посещаемой на моем
 сайте. Я написал её когда только начинал знакомство с
-[Grunt](http://gruntjs.com/ "Grunt"), так что это было в большей степени
+[Grunt][3], так что это было в большей степени
 руководство для
 меня самого, чем для кого-то другого. Теперь, спустя полтора года, я чувствую
 необходимость пересмотреть свои подходы к использованию Grunt, потому что за
@@ -18,12 +18,12 @@ Github](https://github.com/matt-bailey/grunt-frontend-boilerplate).**
 ## Глобальная установка Node и Grunt
 
 Во-первых, вам нужно убедиться, что у вас установлен
-[Node](http://nodejs.org/download/) и [Grunt CLI](http://gruntjs.com/getting-started) (command line interface).
+[Node][5] и [Grunt CLI][6] (command line interface).
 
 * На сайте Node есть загрузочные пакеты для разных систем.
-[Полную информацию можно найти здесь](http://nodejs.org/download/).
+[Полную информацию можно найти здесь][5].
 * После установки Node просто запустите следующую команду в вашем терминале
-(я использую [iTerm2](http://iterm2.com/)) для установки **grunt-cli**:
+(я использую [iTerm2][7]) для установки **grunt-cli**:
 
 ```
 npm install -g grunt-cli
@@ -32,7 +32,7 @@ npm install -g grunt-cli
 ## Установка Ruby и Sass
 
 **Обновление:** я недавно переключился с `grunt-contrib-sass` на `grunt-sass`,
-использующий экспериментальный компилятор [libsass](http://libsass.org/) на C++,
+использующий экспериментальный компилятор [libsass][8] на C++,
 он быстрее и не требует установки Ruby и gem Sass.
 Однако, если у вас возникают проблемы при компиляции с
 помощью `grunt-sass`, то, возможно, вам нужно использовать `grunt-contrib-sass`
@@ -40,8 +40,8 @@ npm install -g grunt-cli
 
 Я использую Sass в качестве CSS-препроцессора. Для использования Sass в
 виде Grunt-задачи вам нужно установить Ruby ([полная инструкция по установке
-здесь](https://www.ruby-lang.org/en/installation/)), а после этого gem
-[Sass](http://sass-lang.com/download.html):
+здесь][9]), а после этого gem
+[Sass][10]:
 
 ```
 gem install sass
@@ -62,7 +62,7 @@ src/styles/
 ## Создание Gruntfile
 
 Я больше не использую инструменты-генераторы (такие как `grunt init`
-или [Yeoman](http://yeoman.io/)). Я устанавливаю всё самостоятельно, а это
+или [Yeoman][11]). Я устанавливаю всё самостоятельно, а это
 означает, что я гораздо лучше понимаю что происходит. На самом деле всё не так
 сложно, если вы проделаете это несколько раз.
 
@@ -85,7 +85,7 @@ module.exports = function(grunt) {
 
 `time-grunt` сообщает вам как много времени занимает каждая задача и общее
 время сборки, а `jitGrunt: true` указывает `load-grunt-config` использовать
-быстрый [jit-grunt](https://github.com/shootaroo/jit-grunt) (Just In Time)
+быстрый [jit-grunt][12] (Just In Time)
 загрузчик задач (это опционально, но нам же важна скорость?).
 
 ## Создание файла пакета
@@ -163,9 +163,9 @@ npm install grunt-contrib-watch --save-dev
 6. `grunt-contrib-imagemin`: незаменимая вещь для оптимизации изображений.
 7. `grunt-sass`: компиляция ваших SASS/SCSS файлов в CSS. **Обратите
 внимание:** эта Sass-задача использует более быстрый компилятор
-[libsass](http://libsass.org/) компилятор, но он экспериментальный.
+[libsass][8] компилятор, но он экспериментальный.
 Если у вас возникнут проблемы, то лучше используйте более стабильный, но медленный
-[grunt-contrib-sass](https://github.com/gruntjs/grunt-contrib-sass).
+[grunt-contrib-sass][13].
 8. `grunt-contrib-uglify`: делает ваш Javascript красивым и ужасным.
 9. `grunt-contrib-jshint`: валидация файлов Javascript.
 10. `jshint-stylish`: полностью опционально, но эта задача преобразовывает
@@ -234,7 +234,7 @@ prod:
 *  `devimg` — запускает задачи по разработке и изображениям
 *  `prod` — запускает `prod` задачи и задачи по изображениям
 
-**[Здесь](https://github.com/firstandthird/load-grunt-config#aliases) более подробная информация по настройке алиасов для `load-grunt-config`.**
+**[Здесь][14] более подробная информация по настройке алиасов для `load-grunt-config`.**
 
 ### concurrent.js
 
@@ -276,7 +276,7 @@ module.exports = {
 `clean`, а затем `sass:dev` и `uglify` одновременно — для перегенерации CSS и
 Javascript.
 
-**[Здесь](https://github.com/sindresorhus/grunt-concurrent) более подробная информация по управлению `grunt-concurrent`.**
+**[Здесь][15] более подробная информация по управлению `grunt-concurrent`.**
 
 ### clean.js
 
@@ -290,7 +290,7 @@ module.exports = {
 
 Управлять `grunt-contrib-clean` совсем несложно: здесь я просто говорю, что нужно удалить содержимое директории `dist/`. Используйте эту задачу с осторожностью - она будет удалять без разбора всё, что вы ей скажете — без всяких оповещений, поэтому убедитесь, что всё настроили правильно.
 
-**[Здесь](https://github.com/gruntjs/grunt-contrib-clean) более подробная информация по конфигурированию `grunt-contrib-clean`.**
+**[Здесь][16] более подробная информация по конфигурированию `grunt-contrib-clean`.**
 
 ### imagemin.js
 
@@ -309,7 +309,7 @@ module.exports = {
 
 Эта задача просто оптимизирует все изображения из `src/images/` и сохраняет их в `dist/images/`.
 
-**[Здесь](https://github.com/gruntjs/grunt-contrib-imagemin) более подробная информация по управлению `grunt-contrib-imagemin`.**
+**[Здесь][17] более подробная информация по управлению `grunt-contrib-imagemin`.**
 
 ### sass.js
 
@@ -349,7 +349,7 @@ module.exports = {
 сайт (`prod`). Конфигурации очень схожи, но для разработки я установил стиль вывода
 `nested` и включил карты кода.
 
-**[Здесь](https://github.com/sindresorhus/grunt-sass) более подробная информация по конфигурации `grunt-sass`.**
+**[Здесь][18] более подробная информация по конфигурации `grunt-sass`.**
 
 ### jshint.js
 
@@ -368,7 +368,7 @@ module.exports = {
 
 Задача `jshint` проверяет Javascript и сообщает, всё ли в порядке.
 
-**[Здесь](https://github.com/gruntjs/grunt-contrib-jshint) более подробная информациия по конфигурированию `grunt-contrib-jshint`.**
+**[Здесь][19] более подробная информациия по конфигурированию `grunt-contrib-jshint`.**
 
 ### uglify.js
 
@@ -388,7 +388,7 @@ module.exports = {
 
 Задача `uglify` берёт Javascript-файлы и минифицирует их — всё просто!
 
-**[Здесь](https://github.com/gruntjs/grunt-contrib-uglify)
+**[Здесь][20]
 более подробная информация по конфигурированию `grunt-contrib-uglify`.**
 
 ### watch.js
@@ -425,9 +425,9 @@ module.exports = {
 `watch` запускает заданные задач при изменении в наблюдаемых файлах - при добавлении, редактировании 
 или удалении.
 
-**Обратите внимание: наиболее простой способ заставить работать Livereload — это установить [расширение для браузера](http://feedback.livereload.com/knowledgebase/articles/86242).**
+**Обратите внимание: наиболее простой способ заставить работать Livereload — это установить [расширение для браузера][21].**
 
-**[Здесь](https://github.com/gruntjs/grunt-contrib-watch) более подробная информация по конфигурированию `grunt-contrib-watch` и Livereload.**
+**[Здесь][22] более подробная информация по конфигурированию `grunt-contrib-watch` и Livereload.**
 
 ## Запуск задач
 
@@ -439,7 +439,7 @@ module.exports = {
 Если всё в порядке, вы должны увидеть ползущий по экрану текст и финальное
 сообщение, примерно такое:
 
-![Вывод продакшн-сборки Grunt](img/grunt-frontend-boilerplate-1.png)
+![Вывод продакшн-сборки Grunt][Вывод продакшн-сборки Grunt]
 
 Мне нравится небольшой отчет, который выводит `time-grunt`. Я могу увидеть
 сколько времени выполняются задачи, запускаемые одновременно, и сколько
@@ -458,6 +458,32 @@ module.exports = {
 выше, то скоро набьёте руку, начнёте добавлять новые задачи и подстраивать
 рабочий процесс под свои нужды.
 
-**Повторюсь, код из этой статьи можно найти на [Github](https://github.com/matt-bailey/grunt-frontend-boilerplate).**
+**Повторюсь, код из этой статьи можно найти на [Github][4].**
 
-Оставляйте любые вопросы в комментариях ниже или задавайте их на [github](https://github.com/matt-bailey/grunt-frontend-boilerplate/issues).
+Оставляйте любые вопросы в комментариях ниже или задавайте их на [github][23].
+
+ [Логотип Grunt]: img/tumblr_inline_mjrobcZQpo1qz4rgp.png "Логотип Grunt"
+
+ [2]: http://mattbailey.io/a-beginners-guide-to-grunt/ "Matt Bailey: A Beginner's Guide To Grunt"
+ [3]: http://gruntjs.com/ "Grunt"
+ [4]: https://github.com/matt-bailey/grunt-frontend-boilerplate
+ [5]: http://nodejs.org/download/
+ [6]: http://gruntjs.com/getting-started
+ [7]: http://iterm2.com/
+ [8]: http://libsass.org/
+ [9]: https://www.ruby-lang.org/en/installation/
+ [10]: http://sass-lang.com/download.html
+ [11]: http://yeoman.io/
+ [12]: https://github.com/shootaroo/jit-grunt
+ [13]: https://github.com/gruntjs/grunt-contrib-sass
+ [14]: https://github.com/firstandthird/load-grunt-config#aliases
+ [15]: https://github.com/sindresorhus/grunt-concurrent
+ [16]: https://github.com/gruntjs/grunt-contrib-clean
+ [17]: https://github.com/gruntjs/grunt-contrib-imagemin
+ [18]: https://github.com/sindresorhus/grunt-sass
+ [19]: https://github.com/gruntjs/grunt-contrib-jshint
+ [20]: https://github.com/gruntjs/grunt-contrib-uglify
+ [21]: http://feedback.livereload.com/knowledgebase/articles/86242
+ [22]: https://github.com/gruntjs/grunt-contrib-watch
+ [Вывод продакшн-сборки Grunt]: img/grunt-frontend-boilerplate-1.png "Вывод продакшн-сборки Grunt"
+ [23]: https://github.com/matt-bailey/grunt-frontend-boilerplate/issues

@@ -234,7 +234,7 @@ prod:
 *  `devimg` — запускает задачи по разработке и изображениям
 *  `prod` — запускает `prod` задачи и задачи по изображениям
 
-**[Перейдите сюда](https://github.com/firstandthird/load-grunt-config#aliases) за более подробной информацией по настройке алиасов для `load-grunt-config`.**
+**[Здесь](https://github.com/firstandthird/load-grunt-config#aliases) более подробная информация по настройке алиасов для `load-grunt-config`.**
 
 ### concurrent.js
 
@@ -276,7 +276,7 @@ module.exports = {
 `clean`, а затем `sass:dev` и `uglify` одновременно, для перегенерации css и
 javascript.
 
-**[Перейдите сюда](https://github.com/sindresorhus/grunt-concurrent) за более подробной информацией по управлению `grunt-concurrent`.**
+**[Здесь](https://github.com/sindresorhus/grunt-concurrent) более подробная информация по управлению `grunt-concurrent`.**
 
 ### clean.js
 
@@ -290,7 +290,7 @@ module.exports = {
 
 Управлять `grunt-contrib-clean` несложно: здесь я просто говорю, что нужно удалить содержимое директории `dist/`. Используйте эту задачу с осторожностью - она будет удалять без разбора всё, что вы ей скажете — без всяких оповещений, поэтому убедитесь, что всё настроили  правильно.
 
-**[Перейдите сюда](https://github.com/gruntjs/grunt-contrib-clean) за более подробной информацией по конфигурированию `grunt-contrib-clean`.**
+**[Здесь](https://github.com/gruntjs/grunt-contrib-clean) более подробная информация по конфигурированию `grunt-contrib-clean`.**
 
 ### imagemin.js
 
@@ -426,7 +426,7 @@ Watch запускает специфичные задач при изменен
 
 **Обратите внимание: наиболее простой способ заставить работать Livereload — это установить [расширение браузера](http://feedback.livereload.com/knowledgebase/articles/86242).**
 
-**[Перейдите сюда](https://github.com/gruntjs/grunt-contrib-watch) за более подробной информацией по конфигурированию `grunt-contrib-watch` и Livereload.**
+**[Здесь](https://github.com/gruntjs/grunt-contrib-watch) более подробная информация по конфигурированию `grunt-contrib-watch` и Livereload.**
 
 ## Запуск задач
 

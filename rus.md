@@ -22,9 +22,7 @@
 * После установки Node просто запустите следующую команду в вашем терминале
 (я использую [iTerm2][7]) для установки **grunt-cli**:
 
-```
-npm install -g grunt-cli
-```
+<pre><code>npm install -g grunt-cli</code></pre>
 
 
 ## Установка Ruby и Sass
